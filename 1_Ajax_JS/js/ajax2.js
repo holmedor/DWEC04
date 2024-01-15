@@ -20,8 +20,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 fetch('https://reqres.in/api/users')
     .then(function(data){
-        //convertir datos a json
-        return data.json();
+        return data.json();//convertir datos a json
     })
     .then(users=>{
         //guardar los datos de usuario en una variable
