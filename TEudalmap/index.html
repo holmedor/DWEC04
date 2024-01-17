@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petición AJAX</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="js/00groups.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <main id="indexContent">
+        <h1>Web del Gobierno Vasco donde se puedan ver todas las entidades, medioambiente y equipamientos</h1>
+        <header>
+            <a href="index.html">
+                <img src="img/f-logo-gv.png" alt="Logo de GV-EJ" />
+            </a>
+            <nav id="mainNav">
+                <ul>
+                    <ul>
+                        <li><a href="views/01economia.html">ECONOMIA / COMPETITIVIDAD</a></li>
+                        <li><a href="views/02cohesion.html">COHESION SOCIAL / CALIDAD DE VIDA</a></li>
+                        <li><a href="views/03medioambiente.html">MEDIOAMBIENTE Y MOVILIDAD</a></li>
+                        <li><a href="views/49groups.html">Población extranjera de fuera de la UE (% población extranjera)</a></li>
+                    </ul>
+            </nav>
+            <button onclick="idioma_index()">
+                <img id="imglang" src="img/idioma.png" alt="IDIOMA" />
+            </button>
+        </header>
+        <hr>
+        <p id="resumen">El API de Udalmap proporciona acceso a más de 200 indicadores de información municipal, cuya
+            finalidad es mostrar con detalle la realidad en los municipios de la Comunidad Autónoma de Euskadi sobre
+            áreas como economía y competitividad, cohesión social, calidad de vida, medio ambiente y movilidad.</p>
+        <hr>
+        <!--1.1 PETICIONES AJAX A TRAVÉS DE FETCH - Listar grupos -->
+        <h2>grupos (3)</h2>
+        <div id="desde"></div>
+        <div id="hasta"></div>
+        <button onclick="siguiente()">SIGUIENTES</button>
+        <div id="grupos">
+            <!--       <span class="cargando">Realizando petición...</span> -->
+        </div>
+        <hr>
+    </main>
+</body>
+
+</html>

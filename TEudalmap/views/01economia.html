@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petición AJAX</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/01economia.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+
+</head>
+
+<body>
+    <main id="indexContent">
+        <h1>Web del Gobierno Vasco donde se puedan ver todas las entidades, personas y equipamientos</h1>
+        <header>
+            <a href="../index.html">
+                <img src="../img/f-logo-gv.png" alt="Logo de GV-EJ" />
+            </a>
+            <nav id="mainNav">
+                <ul>
+                    <ul>
+                        <li><a href="01economia.html">ECONOMIA / COMPETITIVIDAD</a></li>
+                        <li><a href="02cohesion.html">COHESION SOCIAL / CALIDAD DE VIDA</a></li>
+                        <li><a href="03medioambiente.html">MEDIOAMBIENTE Y MOVILIDAD</a></li>
+                        <li><a href="49groups.html">Población extranjera de fuera de la UE (% población extranjera)</a></li>
+                    </ul>
+            </nav>
+            <button onclick="idioma()">
+                <img id="imglang" src="../img/idioma.png" alt="IDIOMA" />
+            </button>
+        </header>
+        <hr>
+        <!--1.1 PETICIONES AJAX A TRAVÉS DE FETCH - Listar usuarios -->
+        <div id="intro">
+            <p>ECONOMIA ( &nbsp; </p>
+            <p id="desde"> </p>
+            <p>&nbsp;a&nbsp; </p>
+            <p id="hasta"> </p>
+            <p>&nbsp;de&nbsp; </p>
+            <p id="total"> </p>
+            <p>&nbsp;)&nbsp;</p>
+            <button id="siguientes" onclick="siguiente()">SIGUIENTES</button>
+        </div>
+        <hr>
+        <div id="economia"></div>
+        <hr>
+        <p id="resumen">Se muestran los datos de contacto de personas (cargos públicos),
+            entidades (estructura del Gobierno Vasco y entidades dependientes) y equipamientos públicos.
+        </p>
+        <hr>
+</body>
+</main>
+
+</html>

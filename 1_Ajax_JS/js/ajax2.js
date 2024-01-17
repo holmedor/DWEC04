@@ -31,7 +31,6 @@ fetch('https://reqres.in/api/users')
 
         //mostrar usuarios por pantalla
         usuarios.map(function(user,i){
-
             let nombre=document.createElement('h3');
             nombre.innerHTML=i+" - "+user.first_name+" "+user.last_name;      
             divUsuarios.appendChild(nombre);

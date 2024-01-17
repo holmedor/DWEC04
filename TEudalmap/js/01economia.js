@@ -1,12 +1,12 @@
 'use strict';
 
-console.log("Peticiones AJAX: EQUPAMIENTOS");
+console.log("Peticiones AJAX: ECONOMIA");
 
 var direccion;
 var datos, total;
 var desde = 0;
 const intervalo = 10;
-var urlbase = "https://api.euskadi.eus/directory/equipments?lang=SPANISH&fromItemAt=";
+var urlbase = "https://api.euskadi.eus/directory?lang=SPANISH&fromItemAt=";
 var url = urlbase + desde + "&pageSize=" + intervalo;
 
 function pedirDatos(miurl) {
@@ -46,9 +46,8 @@ function pintar() {
         } else {
             direccion = "No hay datos"
         }
-//        $('#equipamientos').append("<p> <a href=" + element._links.mainEntityOfPage + " target=”_blank”> " + element.name + "</a>" + element.geoPosition.address + "</p>");
-        $('#equipamientos').append("<p> <a href=" + element._links.mainEntityOfPage + " target=”_blank”> " + element.name + "</a>" + direccion + "</p>");
-        //        window.open(element._links.mainEntityOfPage,element.name,"width=120,height=300,scrollbars=NO")    });
+//        $('#economia').append("<p> <a href=" + element._links.mainEntityOfPage + " target=”_blank”> " + element.name + "</a></p>");
+        $('#economia').append("<p> <a href=" + direccion + " target=”_blank”> " + element.name + "</a>" + direccion + "</p>");
     });
 }
 
@@ -60,7 +59,7 @@ function siguiente() {
             //cuando resuelve la promesa ejecuta este codigo
             datos = data
             console.log(datos)
-            $('#equipamientos').empty();
+            $('#economia').empty();
             pintar()
         })
         .catch(function (err) { //JS
@@ -79,5 +78,4 @@ pedirDatos(url)
     .catch(function (err) { //JS
         //cuando la promesa es rechazada ejecuta este código
         console.log(err)
-    });
-
+    })

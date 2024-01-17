@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petición AJAX</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/00types.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+</head>
+
+<body>
+    <main id="indexContent">
+        <h1>Web del Gobierno Vasco donde se puedan ver todas las entidades, personas y equipamientos</h1>
+        <header>
+            <a href="../index.html">
+                <img src="../img/f-logo-gv.png" alt="Logo de GV-EJ" />
+            </a>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="00types.html">TIPOS</a></li>
+                    <li><a href="01general.html">GENERAL</a></li>
+                    <li><a href="02entities.html">ENTIDADES</a></li>
+                    <li><a href="03people.html">PERSONAS</a></li>
+                    <li><a href="04equipments.html">EQUIPAMIENTOS</a></li>
+                </ul>
+            </nav>
+            <button onclick="idioma()">
+                <img id="imglang" src="../img/idioma.png" alt="IDIOMA" />
+            </button>
+        </header>
+        <hr>
+        <p id="resumen">El API de Directorio proporciona acceso a los datos de contacto de personas (cargos públicos),
+            entidades
+            (estructura del Gobierno Vasco y entidades dependientes) y equipamientos públicos. Progresivamente se irán
+            incorporando más datos de entidades tanto públicas como privadas (centros de salud, asociaciones,
+            fundaciones, etc.).</p>
+        <hr>
+        <!--1.1 PETICIONES AJAX A TRAVÉS DE FETCH - Listar tipos -->
+        <h2>TIPOS (3)</h2>
+        <div id="desde"></div>
+        <div id="hasta"></div>
+        <button onclick="siguiente()">SIGUIENTES</button>
+        <div id="tipos">
+            <!--       <span class="cargando">Realizando petición...</span> -->
+        </div>
+        <hr>
+
+</body>
+</main>
+
+</html>

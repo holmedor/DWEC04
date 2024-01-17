@@ -1,11 +1,12 @@
 'use strict';
 
-console.log("Peticiones AJAX: TIPOS");
+console.log("Peticiones AJAX: grupos");
 
 var datos, total;
 var desde = 0;
 const intervalo = 10;
-var url="https://api.euskadi.eus/directory/types?lang=SPANISH";
+//var url="https://api.euskadi.eus/directory/types?lang=SPANISH";
+var url="https://api.euskadi.eus/udalmap/groups?lang=SPANISH&summarized=false"
 
 function pedirDatos(){
     return new Promise(function (resolve,reject){
@@ -29,7 +30,13 @@ function pedirDatos(){
 function pintar(){
     console.log("datos: ",datos);
         datos.forEach(element=>{
-            $('#tipos').append("<p>"+element.id+" "+element.name+"</p>");
+            $('#grupos').append("<p> "+element.id+" "+element.name+"</p>");
+            element.subgroups.forEach(subelement=>{
+                $('#grupos').append("<p>  "+subelement.id+" "+subelement.name+"</p>");
+                subelement.indicators.forEach(indicador=>{
+                    $('#grupos').append("<p>   "+indicador.id+" "+indicador.name+"</p>");
+                })
+            })
         });
 }
 //////////MAIN///////////////
