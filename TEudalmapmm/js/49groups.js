@@ -28,7 +28,8 @@ var desde = 0;
 const intervalo = 10;
 //var url="https://api.euskadi.eus/directory/types?lang=SPANISH";
 //var url="https://api.euskadi.eus/udalmap/groups?lang=SPANISH&summarized=false"
-var url = "https://api.euskadi.eus/udalmap/indicators/49/entities?lang=SPANISH"
+//var url = "https://api.euskadi.eus/udalmap/indicators/49/entities?lang=SPANISH"
+var url = "https://api.euskadi.eus/udalmap/groups/M.1?lang=SPANISH&summarized=false"
 function pedirDatos() {
     return new Promise(function (resolve, reject) {
         $.ajax({ //JQUERY

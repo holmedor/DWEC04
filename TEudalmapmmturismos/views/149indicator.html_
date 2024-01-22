@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petición AJAX</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="../js/149indicator.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+</head>
+
+<body>
+    <main id="indexContent">
+        <h1>Web del Gobierno Vasco donde se puedan ver indicadores sobre vehículos, turismos y taxis</h1>
+        <header>
+            <a href="../index.html">
+                <img src="../img/f-logo-gv.png" alt="Logo de GV-EJ" />
+            </a>
+            <nav id="mainNav">
+                <ul>
+                    <ul>
+                        <li><a href="102indicator.html">Vehículos</a></li>
+                        <li><a href="103indicator.html">Taxis</a></li>
+                        <li><a href="141indicator.html">Bidegorris</a></li>
+                        <li><a href="113indicator.html">Carreteras</a></li>
+                        <li><a href="158indicator.html">Turismos</a></li>
+                    </ul>
+            </nav>
+            <button onclick="idioma()">
+                <img id="imglang" src="../img/idioma.png" alt="IDIOMA" />
+            </button>
+        </header>
+        <hr>
+        <table>
+            <tr>
+                <td>
+                    <canvas id="48000" width="400" height="200"></canvas>
+                </td>
+                <td>
+                    <canvas id="01000" width="400" height="200"></canvas>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <canvas id="20000" width="400" height="200"></canvas>
+                </td>
+                <td>
+                    <canvas id="00000" width="400" height="200"></canvas>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <p id="resumen">El parque de vehículos de un municipio está constituido por todos los vehículos con motor
+            matriculados en el municipio, excepto ciclomotores y vehículos especiales, que teóricamente circulan en el
+            municipio. De este modo, se incluye todas las matriculaciones que haya habido durante todos los años menos
+            las bajas producidas y las modificaciones debidas por las reformas, tales como cambios de potencia, de
+            utilización, etc.
+
+            No obstante, para el cálculo de este indicador sólo se considerarán los vehículos turismos, esto es,
+            aquellos vehículos de cuatro ruedas, destinados al transporte de viajeros con capacidad inferior a 9 plazas,
+            incluido el conductor.
+        </p>
+
+        <hr>
+</body>
+</main>
+
+</html>

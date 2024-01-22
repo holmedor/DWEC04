@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charts in Table with Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Table to hold the charts -->
+  <table id="chartTable"></table>
+
+  <script>
+    // Sample data for multiple charts
+    const chartData = [
+      { labels: ['A', 'B', 'C', 'D', 'E'], data: [30, 45, 12, 78, 64], label: 'Chart 1' },
+      { labels: ['X', 'Y', 'Z', 'W', 'V'], data: [50, 20, 80, 35, 60], label: 'Chart 2' },
+      { labels: ['One', 'Two', 'Three', 'Four', 'Five'], data: [70, 15, 45, 90, 30], label: 'Chart 3' }
+    ];
+
+    // Table to hold the charts
+    const chartTable = document.getElementById('chartTable');
+
+    // Loop through each set of data and create a row with a chart
+    chartData.forEach((data, index) => {
+      // Create a table row
+      const row = chartTable.insertRow();
+
+      // Create a table cell for the chart canvas
+      const cell = row.insertCell();
+      cell.style.width = '50%';
+
+      // Create a canvas element for each chart
+      const canvas = document.createElement('canvas');
+      canvas.id = `chart${index}`;
+      canvas.width = 200;
+      canvas.height = 100;
+
+      // Append the canvas to the cell
+      cell.appendChild(canvas);
+
+      // Get the context of the canvas
+      const ctx = canvas.getContext('2d');
+
+      // Create the chart
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            label: data.label,
+            data: data.data,
+            borderColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`,
+            borderWidth: 1,
+            fill: false
+          }]
+        },
+      });
+    });
+  </script>
+</body>
+</html>

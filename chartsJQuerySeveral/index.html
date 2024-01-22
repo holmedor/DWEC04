@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Charts with Chart.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Container to hold the charts -->
+  <div id="chartContainer"></div>
+
+  <script>
+    // Sample data for multiple charts
+    const chartData = [
+      { labels: ['A', 'B', 'C', 'D', 'E'], data: [30, 45, 12, 78, 64], label: 'Chart 1' },
+      { labels: ['X', 'Y', 'Z', 'W', 'V'], data: [50, 20, 80, 35, 60], label: 'Chart 2' },
+      { labels: ['One', 'Two', 'Three', 'Four', 'Five'], data: [70, 15, 45, 90, 30], label: 'Chart 3' }
+    ];
+
+    // Container to hold the charts
+    const chartContainer = document.getElementById('chartContainer');
+
+    // Loop through each set of data and create a chart
+    chartData.forEach((data, index) => {
+      // Create a canvas element for each chart
+      const canvas = document.createElement('canvas');
+      canvas.id = `chart${index}`;
+      canvas.width = 400;
+      canvas.height = 200;
+
+      // Append the canvas to the container
+      chartContainer.appendChild(canvas);
+
+      // Get the context of the canvas
+      const ctx = canvas.getContext('2d');
+
+      // Create the chart
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            label: data.label,
+            data: data.data,
+            borderColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`,
+            borderWidth: 1,
+            fill: false
+          }]
+        },
+      });
+    });
+  </script>
+</body>
+</html>
